@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+	<parameter name="mapSubReport" class="java.lang.String"/>
+	<parameter name="scalebarGraphic" class="java.lang.String"/>
+	<parameter name="northArrowGraphic" class="java.lang.String"/>
+	<title>
+		<band height="390" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="800" height="381" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d"/>
+				<subreportExpression><![CDATA[$P{mapSubReport}]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="1" y="357" width="150" height="31" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance(new java.io.File(new java.net.URI($P{scalebarGraphic})))]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="737" y="9" width="50" height="50" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance(new java.io.File(new java.net.URI($P{northArrowGraphic})))]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

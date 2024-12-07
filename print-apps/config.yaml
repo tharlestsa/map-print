@@ -1,0 +1,31 @@
+templates:
+  #===========================================================================
+  A4 landscape: !template
+  #===========================================================================
+    reportTemplate: report.jrxml
+    attributes:
+      map: !map
+          maxWidth: 800
+          maxHeight: 385
+          maxDpi: 400
+          zoomSnapTolerance: 0.025
+          zoomLevelSnapStrategy: CLOSEST_LOWER_SCALE_ON_TIE
+          zoomLevels: !zoomLevels
+            scales: [5000, 10000, 50000, 110000, 500000, 1000000]
+      scalebar: !scalebar
+        width: 240
+        height: 30
+        createSubReport: false
+        default:
+          align: "left"
+      northArrowDef: !northArrow
+        size: 80
+        createSubReport: false
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap {}
+    - !createScalebar {}
+    - !createNorthArrow
+        inputMapper:
+            northArrowDef: northArrow
